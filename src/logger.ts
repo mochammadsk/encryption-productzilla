@@ -11,7 +11,7 @@ async function logActivity(message: string): Promise<void> {
     }_${date.getDate()}_${date.getFullYear()}`;
     const logFilePath = path.join(logDir, `${timestamp}.log`);
 
-    await fs.mkdir(logDir, { recursive: true }); // Buat direktori jika belum ada
+    await fs.mkdir(logDir, { recursive: true });
     await fs.appendFile(
       logFilePath,
       `${new Date().toISOString()} - ${message}\n`

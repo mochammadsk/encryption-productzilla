@@ -4,12 +4,12 @@ import * as path from "path";
 import { logActivity } from "./logger";
 
 const algorithm = "aes-256-cbc";
-const iv = crypto.randomBytes(16); // Inisialisasi vektor acak (IV)
+const iv = crypto.randomBytes(16);
 
 async function encryptFile(filePath: string, password: string): Promise<void> {
   try {
     logActivity(`Mulai mengenkripsi file ${filePath}`);
-    const key = crypto.scryptSync(password, "salt", 32); // Buat kunci enkripsi dari password
+    const key = crypto.scryptSync(password, "salt", 32);
     const cipher = crypto.createCipheriv(algorithm, key, iv);
 
     const fileData = await fs.readFile(filePath);
@@ -42,8 +42,8 @@ async function decryptFile(filePath: string, password: string): Promise<void> {
     const key = crypto.scryptSync(password, "salt", 32);
     const fileData = await fs.readFile(filePath);
 
-    const iv = fileData.slice(0, 16); // Ambil IV dari file yang terenkripsi
-    const encryptedData = fileData.slice(16); // Ambil data yang terenkripsi
+    const iv = fileData.slice(0, 16);
+    const encryptedData = fileData.slice(16);
 
     const decipher = crypto.createDecipheriv(algorithm, key, iv);
 
