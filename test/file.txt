@@ -1,0 +1,5 @@
+{
+    "name":     "Mochammad Syahrul Kurniawan",
+    "class":    "Productzilla Academy",
+    "program":  "Fullstack Web Developer"
+}

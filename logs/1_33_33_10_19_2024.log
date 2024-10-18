@@ -1,0 +1,2 @@
+2024-10-18T17:33:33.405Z - Mulai mendekripsi file .\test\file_encrypted.txt
+2024-10-18T17:33:33.478Z - Error ketika mendekripsi file: error:1C800064:Provider routines::bad decrypt
