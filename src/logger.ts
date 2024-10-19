@@ -6,9 +6,7 @@ const logDir = path.join(__dirname, "../logs");
 async function logActivity(message: string): Promise<void> {
   try {
     const date = new Date();
-    const timestamp = `${date.getHours()}_${date.getMinutes()}_${date.getSeconds()}_${
-      date.getMonth() + 1
-    }_${date.getDate()}_${date.getFullYear()}`;
+    const timestamp = `${date.getHours}_${date.getMinutes}_${date.getMonth}_${date.getDate}_${date.getFullYear}`;
     const logFilePath = path.join(logDir, `${timestamp}.log`);
 
     await fs.mkdir(logDir, { recursive: true });
